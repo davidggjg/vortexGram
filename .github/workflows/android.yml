@@ -23,10 +23,10 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew TMessagesProj_App:assembleDebug -PIS_PRIVATE=false
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: VortexGram
-          path: TMessagesProj_App/build/outputs/apk/debug/
+          path: TMessagesProj_App/build/outputs/apk/
